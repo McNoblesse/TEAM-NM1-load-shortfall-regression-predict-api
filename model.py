@@ -58,8 +58,9 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    column_order = feature_vector_df['Year', 'Month', 'Day', 'Hour','TimeNumeric', 
-        'Madrid_wind_speed', 'Valencia_wind_deg', 'Bilbao_rain_1h',
+    #column_order =
+      
+    predict_vector = feature_vector_df[['Madrid_wind_speed', 'Valencia_wind_deg', 'Bilbao_rain_1h',
        'Valencia_wind_speed', 'Seville_humidity', 'Madrid_humidity',
        'Bilbao_clouds_all', 'Bilbao_wind_speed', 'Seville_clouds_all',
        'Bilbao_wind_deg', 'Barcelona_wind_speed', 'Barcelona_wind_deg',
@@ -74,9 +75,7 @@ def _preprocess_data(data):
        'Barcelona_temp_max', 'Madrid_temp_max', 'Barcelona_temp',
        'Bilbao_temp_min', 'Bilbao_temp', 'Barcelona_temp_min',
        'Bilbao_temp_max', 'Seville_temp_min', 'Madrid_temp', 'Madrid_temp_min',
-       'load_shortfall_3h'] # Define the dsired order of column
-    
-    predict_vector = column_order
+       'load_shortfall_3h']] # Define the dsired order of column
     # ------------------------------------------------------------------------
     return predict_vector
 
