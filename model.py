@@ -58,7 +58,7 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    column_order = ['Year', 'Month', 'Day', 'Hour','TimeNumeric', 
+    column_order = df_train['Year', 'Month', 'Day', 'Hour','TimeNumeric', 
         'Madrid_wind_speed', 'Valencia_wind_deg', 'Bilbao_rain_1h',
        'Valencia_wind_speed', 'Seville_humidity', 'Madrid_humidity',
        'Bilbao_clouds_all', 'Bilbao_wind_speed', 'Seville_clouds_all',
@@ -76,9 +76,8 @@ def _preprocess_data(data):
        'Bilbao_temp_max', 'Seville_temp_min', 'Madrid_temp', 'Madrid_temp_min',
        'load_shortfall_3h'] # Define the dsired order of column
     
-    predict_vector = df_clean[column_order]
+    predict_vector = column_order
     # ------------------------------------------------------------------------
-
     return predict_vector
 
 def load_model(path_to_model:str):
