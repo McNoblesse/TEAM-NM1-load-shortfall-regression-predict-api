@@ -45,7 +45,8 @@ print ('-'*40)
 # Here the 'model_prediction()' function will be called when a POST request
 # is sent to our interface located at:
 # http:{Host-machine-ip-address}:5000/api_v0.1
-@app.route('/api_v0.1', methods=['POST'])
+#@app.route('/api_v0.1', methods=['POST'])
+@app.route('http://3.249.125.8:5000/api_v0.1', methods=['POST'])
 def model_prediction():
     # We retrieve the data payload of the POST request
     data = request.get_json(force=True)
@@ -62,4 +63,4 @@ def model_prediction():
 # This will allow Flask to automatically restart itself everytime you
 # update your API code.
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=7000, debug=False)
+    app.run(host='0.0.0.0', port=8000, debug=False)
