@@ -19,7 +19,9 @@
     of model interaction within the API. This includes loading a model from
     file, data preprocessing, and model prediction.  
 
-"""# Helper Dependencies
+"""
+
+# Helper Dependencies
 import numpy as np
 import pandas as pd
 import pickle
@@ -59,7 +61,9 @@ def _preprocess_data(data):
     predict_vector = feature_vector_df[['Madrid_wind_speed','Bilbao_rain_1h','Valencia_wind_speed']]
     # ------------------------------------------------------------------------
 
-    return predict_vectordef load_model(path_to_model:str):
+    return predict_vector
+
+def load_model(path_to_model:str):
     """Adapter function to load our pretrained model into memory.
 
     Parameters
