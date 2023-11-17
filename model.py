@@ -58,7 +58,7 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    predict_vector = feature_vector_df[['Year', 'Month', 'Day', 'Hour','TimeNumeric', 
+    predict_vector = feature_vector_df['Year', 'Month', 'Day', 'Hour','TimeNumeric', 
                                         'Madrid_wind_speed', 'Valencia_wind_deg', 'Bilbao_rain_1h',
                                         'Valencia_wind_speed', 'Seville_humidity', 'Madrid_humidity',
                                         'Bilbao_clouds_all', 'Bilbao_wind_speed', 'Seville_clouds_all',
@@ -74,7 +74,7 @@ def _preprocess_data(data):
                                         'Barcelona_temp_max', 'Madrid_temp_max', 'Barcelona_temp',
                                         'Bilbao_temp_min', 'Bilbao_temp', 'Barcelona_temp_min',
                                         'Bilbao_temp_max', 'Seville_temp_min', 'Madrid_temp', 'Madrid_temp_min',
-                                        'load_shortfall_3h']]
+                                        'load_shortfall_3h']
     # ------------------------------------------------------------------------
     feature_vector_df['Valencia_pressure'] = feature_vector_df['Valencia_pressure'].fillna(feature_vector_df['Valencia_pressure'].mode()[0])
     feature_vector_df['Valencia_wind_deg'] = feature_vector_df['Valencia_wind_deg'].str.extract('(\d+)')
