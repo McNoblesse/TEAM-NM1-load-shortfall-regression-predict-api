@@ -58,24 +58,6 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    feature_vector_df['Valencia_pressure'] = feature_vector_df['Valencia_pressure'].fillna(feature_vector_df['Valencia_pressure'].mode()[0])
-    feature_vector_df['Valencia_wind_deg'] = feature_vector_df['Valencia_wind_deg'].str.extract('(\d+)')
-    feature_vector_df['Valencia_wind_deg'] = pd.to_numeric(feature_vector_df['Valencia_wind_deg'])
-    feature_vector_df['Valencia_wind_deg']
-    
-    feature_vector_df['Seville_pressure'] = feature_vector_df['Seville_pressure'].str.extract('(\d+)')
-    feature_vector_df['Seville_pressure'] = pd.to_numeric(feature_vector_df['Seville_pressure'])
-    feature_vector_df['Seville_pressure']
-    
-    feature_vector_df['time'] = pd.to_datetime(feature_vector_df['time'])
-    feature_vector_df['Year'] = feature_vector_df['time'].dt.year
-    feature_vector_df['Month'] = feature_vector_df['time'].dt.month
-    feature_vector_df['Day'] = feature_vector_df['time'].dt.day
-    feature_vector_df['Hour'] = feature_vector_df['time'].dt.hour
-    feature_vector_df['Minute'] = feature_vector_df['time'].dt.minute
-    feature_vector_df['Second'] = feature_vector_df['time'].dt.second
-    feature_vector_df['TimeNumeric'] = feature_vector_df['time'].dt.hour * 60 + df_clean['time'].dt.minute
-    
     predict_vector = feature_vector_df[['Year', 'Month', 'Day', 'Hour','TimeNumeric', 
                                         'Madrid_wind_speed', 'Valencia_wind_deg', 'Bilbao_rain_1h',
                                         'Valencia_wind_speed', 'Seville_humidity', 'Madrid_humidity',
@@ -94,6 +76,24 @@ def _preprocess_data(data):
                                         'Bilbao_temp_max', 'Seville_temp_min', 'Madrid_temp', 'Madrid_temp_min',
                                         'load_shortfall_3h']]
     # ------------------------------------------------------------------------
+    feature_vector_df['Valencia_pressure'] = feature_vector_df['Valencia_pressure'].fillna(feature_vector_df['Valencia_pressure'].mode()[0])
+    feature_vector_df['Valencia_wind_deg'] = feature_vector_df['Valencia_wind_deg'].str.extract('(\d+)')
+    feature_vector_df['Valencia_wind_deg'] = pd.to_numeric(feature_vector_df['Valencia_wind_deg'])
+    feature_vector_df['Valencia_wind_deg']
+    
+    feature_vector_df['Seville_pressure'] = feature_vector_df['Seville_pressure'].str.extract('(\d+)')
+    feature_vector_df['Seville_pressure'] = pd.to_numeric(feature_vector_df['Seville_pressure'])
+    feature_vector_df['Seville_pressure']
+    
+    feature_vector_df['time'] = pd.to_datetime(feature_vector_df['time'])
+    feature_vector_df['Year'] = feature_vector_df['time'].dt.year
+    feature_vector_df['Month'] = feature_vector_df['time'].dt.month
+    feature_vector_df['Day'] = feature_vector_df['time'].dt.day
+    feature_vector_df['Hour'] = feature_vector_df['time'].dt.hour
+    feature_vector_df['Minute'] = feature_vector_df['time'].dt.minute
+    feature_vector_df['Second'] = feature_vector_df['time'].dt.second
+    feature_vector_df['TimeNumeric'] = feature_vector_df['time'].dt.hour * 60 + feature_vector_df['time'].dt.minute
+    
 
     return predict_vector
 
