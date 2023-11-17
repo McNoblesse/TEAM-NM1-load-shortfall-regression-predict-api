@@ -58,7 +58,7 @@ def _preprocess_data(data):
     # ---------------------------------------------------------------
 
     # ----------- Replace this code with your own preprocessing steps --------
-    predict_vector = feature_vector_df[['Year', 'Month', 'Day', 'Hour', 'TimeNumeric', 
+    predict_vector = feature_vector_df[[#'Year', 'Month', 'Day', 'Hour', 'TimeNumeric', 
                 #'Minute', 'Second', 
         'Madrid_wind_speed', 'Valencia_wind_deg', 'Bilbao_rain_1h',
        'Valencia_wind_speed', 'Seville_humidity', 'Madrid_humidity',
